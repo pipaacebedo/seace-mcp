@@ -55,7 +55,7 @@ selección, documentos, contratos publicados y Plan Anual de Contrataciones
 ### Opción B — Bundle (.mcpb)
 
 1. Descarga **`seace-mcp-0.2.1.mcpb`** desde
-   [https://github.com/pipaacebedo/seace-mcp/releases](https://github.com/pipaacebedo/seace-mcp/releases).
+   [Releases](https://github.com/pipaacebedo/seace-mcp/releases).
 2. Instálalo según tu cliente:
    - **Claude Desktop**: **Ajustes → Extensiones → Instalar desde archivo**
      y elige el bundle.
