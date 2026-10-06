@@ -52,10 +52,26 @@ selección, documentos, contratos publicados y Plan Anual de Contrataciones
 }
 ```
 
-### Opción B — Bundle (sin terminal)
+### Opción B — Bundle (.mcpb)
 
-1. Descarga **`seace-mcp-<version>.mcpb`** de Release.
-2. En Claude Desktop: **Ajustes → Extensiones → Instalar desde archivo**.
+1. Descarga **`seace-mcp-0.2.1.mcpb`** desde
+   [https://github.com/pipaacebedo/seace-mcp/releases](https://github.com/pipaacebedo/seace-mcp/releases).
+2. Instálalo según tu cliente:
+   - **Claude Desktop**: **Ajustes → Extensiones → Instalar desde archivo**
+     y elige el bundle.
+   - **Codex**: extrae el bundle (es un archivo zip) y añade en
+     `~/.codex/config.toml`:
+
+     ```toml
+     [mcp_servers.seace]
+     command = "uv"
+     args = ["run", "--directory", "RUTA_EXTRAIDA", "server.py"]
+     ```
+
+   - **Antigravity**: extrae el bundle (es un archivo zip) y añade un
+     servidor MCP local con `command: uv` y
+     `args: ["run", "--directory", "RUTA_EXTRAIDA", "server.py"]`.
+     Requiere tener [uv](https://docs.astral.sh/uv/) instalado.
 
 ## Tools (25)
 
@@ -131,5 +147,3 @@ llamada con cap en vez de repetir la misma llamada.
 ## Licencia
 
 [Apache-2.0](LICENSE)
-
-El banner (`assets/banner.png`) y los demas assets del repositorio se publican bajo la misma licencia Apache-2.0 del proyecto.
