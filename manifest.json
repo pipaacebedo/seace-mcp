@@ -1,0 +1,150 @@
+{
+  "manifest_version": "0.4",
+  "name": "seace-mcp",
+  "display_name": "seace-mcp",
+  "version": "0.2.1",
+  "description": "MCP local para buscar en el Sistema Electrónico de Contrataciones del Estado (Seace). No oficial.",
+  "long_description": "Servidor MCP local para el SEACE - Sistema Electrónico de Contrataciones del Estado. 25 tools de punta a punta: los 6 buscadores publicos (procesos de seleccion, anuncios de contratacion futura, expresiones de interes, difusion de requerimientos, ordenes de compra/servicio y condiciones de contratacion), busqueda de entidades, ficha de seleccion completa (items con CUBSO/MYP, cronograma, documentos), acciones por item, historial por convocatoria, codigos SNIP/CUI, lote de fichas y de detalles de contrato, Plan Anual de Contrataciones por entidad, API de contratos publicados (busqueda, detalle completo con garantias y acciones, contratos por expediente, resumen georreferenciado, catalogos) y URLs de descarga de los PDF. El servidor nunca guarda archivos: devuelve datos limpios y URLs de descarga. Proyecto NO oficial, Apache-2.0.",
+  "author": {
+    "name": "pipaacebedo",
+    "url": "https://github.com/pipaacebedo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pipaacebedo/seace-mcp.git"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "peru",
+    "contrataciones",
+    "seace",
+    "osce",
+    "oece",
+    "compras-publicas",
+    "licitaciones",
+    "contratos",
+    "mcp"
+  ],
+  "server": {
+    "type": "uv",
+    "entry_point": "server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${__dirname}",
+        "server.py"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "buscar_procesos",
+      "description": "Busqueda de procesos de seleccion con filtros (anio obligatorio, descripcion, entidad, tipo, objeto, modalidad, SNIP, CUI) y paginacion con index global"
+    },
+    {
+      "name": "buscar_acf",
+      "description": "Anuncios de contratacion futura (ACF) con objeto obligatorio y rangos de fechas"
+    },
+    {
+      "name": "buscar_expresiones_interes",
+      "description": "Expresiones de interes publicadas"
+    },
+    {
+      "name": "buscar_requerimientos",
+      "description": "Difusion de requerimientos (bienes/servicios futuros)"
+    },
+    {
+      "name": "buscar_ocos",
+      "description": "Ordenes de compra y ordenes de servicio por anio+mes+ruc"
+    },
+    {
+      "name": "buscar_cco",
+      "description": "Condiciones de contratacion (contratos estandarizados) por anio"
+    },
+    {
+      "name": "buscar_entidades",
+      "description": "Entidades del Estado por nombre, RUC o sigla (para llenar filtros de ruc)"
+    },
+    {
+      "name": "ficha_proceso",
+      "description": "Ficha de seleccion completa: cabecera, items con CUBSO/MYPE/participantes, cronograma y documentos"
+    },
+    {
+      "name": "detalle_item",
+      "description": "Acciones realizadas por item del proceso (ciclo de vida completo)"
+    },
+    {
+      "name": "historial_proceso",
+      "description": "Historial de contrataciones del proceso por convocatoria (etapa y estado)"
+    },
+    {
+      "name": "codigos_proceso",
+      "description": "Codigos SNIP/CUI publicados del proceso"
+    },
+    {
+      "name": "buscar_pac",
+      "description": "Plan Anual de Contrataciones publico por entidad y anio"
+    },
+    {
+      "name": "detalle_pac",
+      "description": "Listado de procesos programados del PAC de la entidad (mes y fuente de financiamiento)"
+    },
+    {
+      "name": "buscar_contratos",
+      "description": "API JSON de contratos publicados (anio + filtros acotadores server-side)"
+    },
+    {
+      "name": "tipos_seleccion_contratos",
+      "description": "Catalogo de tipos de seleccion de la API de contratos (codSeleccion)"
+    },
+    {
+      "name": "catalogo_ubigeo",
+      "description": "Catalogo geografico de la API de contratos: departamentos, provincias y distritos"
+    },
+    {
+      "name": "resumen_georef",
+      "description": "Resumen por departamento/anio (cantidad y monto por tipo de objeto) y drill-down de contratos por objeto"
+    },
+    {
+      "name": "detalle_contrato",
+      "description": "Detalle completo de un contrato: items CUBSO, garantias, acciones, disputas, arbitrajes y documentos"
+    },
+    {
+      "name": "contratos_expediente",
+      "description": "Todos los contratos publicados de un expediente de seleccion"
+    },
+    {
+      "name": "detalles_contratos",
+      "description": "Lote de detalles de contratos en una llamada (cap 10)"
+    },
+    {
+      "name": "fichas_procesos",
+      "description": "Lote de fichas o resumenes de procesos en una llamada (cap 8 completa / 50 resumen)"
+    },
+    {
+      "name": "listar_filtros",
+      "description": "Valores exactos de los combos del buscador y catalogos de la API"
+    },
+    {
+      "name": "url_documento",
+      "description": "URL firmada de descarga de un documento de proceso (alfresco guest)"
+    },
+    {
+      "name": "url_documento_contrato",
+      "description": "URL de descarga del documento de un contrato (API documentos)"
+    },
+    {
+      "name": "url_perfil_proveedor",
+      "description": "URL del perfil del proveedor en el portal OECE"
+    }
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ]
+  }
+}

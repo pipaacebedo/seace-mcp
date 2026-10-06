@@ -1,0 +1,28 @@
+# venv
+.venv/
+venv/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# dev / qa interno
+.scripts/
+
+# artefactos de compilacion
+dist/
+build/
+
+# secrets
+.env
+.env.*
+
+# editores
+.idea/
+.vscode/
+
+# sistema operativo
+.DS_Store
+Thumbs.db
+*.log
